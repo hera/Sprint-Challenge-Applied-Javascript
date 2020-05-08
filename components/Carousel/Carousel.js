@@ -38,3 +38,12 @@ class Carousel {
 }
 
 let myCarousel = new Carousel('myCarousel');
+
+
+// Controls
+
+let carouselLeft = document.getElementById('carouselLeft');
+carouselLeft.addEventListener('click', () => myCarousel.slideLeft());
+
+let carouselRight = document.getElementById('carouselRight');
+carouselRight.addEventListener('click', () => myCarousel.slideRight());
