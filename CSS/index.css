@@ -163,9 +163,9 @@ body {
   height: 47px;
   background-color: #fff;
 }
-@media (min-width: 1280px) {
+@media (min-width: 1200px) {
   .tabs {
-    width: 1280px;
+    width: 1200px;
   }
 }
 .tabs .topics {
@@ -288,8 +288,7 @@ body {
 .carousel-controls {
     background-color: white;
     display: flex;
-    padding-left: 3rem;
-    padding-right: 3rem;
+    padding: 1rem 3rem;
     justify-content: center;
     align-items: center;
 }
