@@ -9,7 +9,6 @@
 //    <div class="tab">topic here</div>
 
 
-let tabsContainer = document.querySelector('div.topics');
 
 function createTopic(topicData) {
     let topicElement = document.createElement('div');
@@ -22,9 +21,11 @@ function createTopic(topicData) {
 function loadTopics(url, container) {
     axios.get(url)
         .then((response) => {
+            let tabsContainer = document.querySelector(container);
+
             for (let topic of response.data.topics) {
                 let topicElement = createTopic(topic);
-                container.appendChild(topicElement);
+                tabsContainer.appendChild(topicElement);
             }
         })
         .catch((error) => {
@@ -32,4 +33,4 @@ function loadTopics(url, container) {
         });
 }
 
-loadTopics('https://lambda-times-backend.herokuapp.com/topics', tabsContainer);
+loadTopics('https://lambda-times-backend.herokuapp.com/topics', 'div.topics');
