@@ -264,7 +264,7 @@ body {
 }
 
 @media(min-width: 1200px){
-    .carousel {
+    .carousel, .carousel-controls {
         width: 1200px;
     }
 }
@@ -283,4 +283,25 @@ body {
 .carousel-item {
     flex-shrink: 0;
     width: 100%;
+}
+
+.carousel-controls {
+    background-color: white;
+    display: flex;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    justify-content: center;
+}
+
+.carousel-controls button {
+    background: white;
+    opacity: 0.8;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 9999px;
+    outline: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    margin-right: 1rem;
 }
