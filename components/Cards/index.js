@@ -48,10 +48,22 @@ function createCard(cardData) {
 }
 
 
-let data = {
-    "authorName": "FIDO WALKSALOT",
-    "authorPhoto": "./assets/fido.jpg",
-    "headline": "Bootstrap 5: Get a Sneak Peak at all the New Features"
+function loadCards(url, container) {
+    axios.get(url)
+        .then((response) => {
+            let categories = Object.keys(response.data.articles);
+            let articleContainer = document.querySelector(container);
+
+            for (let category of categories) {
+                for (let articleData of response.data.articles[category]) {
+                    let article = createCard(articleData);
+                    articleContainer.appendChild(article);
+                }
+            }
+        })
+        .catch((error) => {
+            console.log(error);
+        });
 }
 
-console.log(createCard(data));
+loadCards('https://lambda-times-backend.herokuapp.com/articles', '.cards-container');
