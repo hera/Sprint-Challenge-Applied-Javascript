@@ -1,19 +1,72 @@
-/* If You've gotten this far, you're on your own! Although we will give you some hints:
-    1. You will need to write a function that creates the carousel component, you will find the HTML below.
-    2. You will need to grab a reference to all of the images
-    3. Create a current index
-    4. Those buttons are gonna need some click handlers.
-    5. Think of how you would animate this component. Make the cards slide in and out, or fade. It's up to you!
-    6. Have fun!
-*/
 
-/* HTML:
-  <div class="carousel">
-    <div class="left-button"> < </div>
-    <img src="./assets/carousel/mountains.jpeg" />
-    <img src="./assets/carousel/computer.jpeg" />
-    <img src="./assets/carousel/trees.jpeg" />
-    <img src="./assets/carousel/turntable.jpeg" />
-    <div class="right-button"> > </div>
-  </div>
-*/
+class Carousel {
+    constructor (carouselId) {
+        this.container = document.getElementById(carouselId);
+        this.inner = this.container.querySelector('.carousel-inner');
+
+        this.currentIndex = 0;
+        this.lastIndex = this.inner.childElementCount - 1;
+
+        this.timer = null;
+        this.interval = 4; // in seconds
+    }
+
+    slideLeft() {
+        let translateValue;
+        
+        if (this.currentIndex) {
+            this.currentIndex--;
+        } else {
+            this.currentIndex = this.lastIndex;
+        }
+
+        translateValue = `-${this.currentIndex * 100}%`;
+
+        this.inner.style.transform = `translateX(${translateValue})`;
+    }
+
+    slideRight() {
+        let translateValue;
+
+        if (this.currentIndex === this.lastIndex) {
+            this.currentIndex = 0;
+            translateValue = 0;
+        } else {
+            this.currentIndex++;
+            translateValue = `-${this.currentIndex * 100}%`;
+        }
+
+        this.inner.style.transform = `translateX(${translateValue})`;
+    }
+
+    slideAuto() {
+        this.timer = setInterval(() => {
+            this.slideRight();
+        }, this.interval * 1000);
+    }
+
+    stop () {
+        clearInterval(this.timer);
+    }
+
+}
+
+let myCarousel = new Carousel('myCarousel');
+
+
+// Controls
+
+let carouselLeft = document.getElementById('carouselLeft');
+carouselLeft.addEventListener('click', () => myCarousel.slideLeft());
+
+let carouselRight = document.getElementById('carouselRight');
+carouselRight.addEventListener('click', () => myCarousel.slideRight());
+
+let autoPlay = document.getElementById('autoPlay');
+autoPlay.addEventListener('click', (event) => {
+    if (autoPlay.checked) {
+        myCarousel.slideAuto();
+    } else {
+        myCarousel.stop();
+    }
+});

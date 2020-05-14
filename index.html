@@ -2,53 +2,76 @@
 <html>
 
 <head>
-  <title>Lambda Times</title>
-  <link rel="icon" href="./favicon.ico">
-  <link rel="stylesheet" type="text/css" href="./CSS/index.css" />
-  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <script src="./components/Tabs/index.js" defer></script>
-  <script src="./components/Header/index.js" defer></script>
-  <script src="./components/Cards/index.js" defer></script>
-  <!-- <script src="./components/Carousel/Carousel.js" defer></script> -->
+    <title>Lambda Times</title>
+    <link rel="icon" href="./favicon.ico">
+    <link rel="stylesheet" type="text/css" href="./CSS/index.css" />
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./components/Tabs/index.js" defer></script>
+    <script src="./components/Header/index.js" defer></script>
+    <script src="./components/Cards/index.js" defer></script>
+   <script src="./components/Carousel/Carousel.js" defer></script>
 </head>
 
 <body>
 
-  <!-- TOP BAR COMPONENT -->
-  <div class="top-bar">
-    <div class="container">
-      <div class="container-left">
-        <span>TOPICS</span><span>SEARCH</span>
-      </div>
-      <div class="container-center">
-        <span>GENERAL</span><span>BROWNBAG</span><span>RANDOM</span><span>MUSIC</span><span>ANNOUNCEMENTS</span>
-      </div>
-      <div class="container-right">
-        <span>LOG IN</span>
-      </div>
+    <!-- TOP BAR COMPONENT -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="container-left">
+                <span>TOPICS</span><span>SEARCH</span>
+            </div>
+            <div class="container-center">
+                <span>GENERAL</span><span>BROWNBAG</span><span>RANDOM</span><span>MUSIC</span><span>ANNOUNCEMENTS</span>
+            </div>
+            <div class="container-right">
+                <span>LOG IN</span>
+            </div>
+        </div>
     </div>
-  </div>
 
-  <!-- HEADER COMPONENT, PLACE HEADER HERE -->
-  <div class="header-container">
-  </div>
-
-  <!-- TABS COMPONENT, PLACE TABS HERE-->
-  <div class="tabs">
-    <div class="topics">
-      <span class="title">TRENDING TOPICS:</span>
+    <!-- HEADER COMPONENT, PLACE HEADER HERE -->
+    <div class="header-container">
     </div>
-  </div>
 
-  <!-- STRETCH GOAL: ONLY ATTEMPT THIS WHEN YOU ARE FINISHED WITH THE MAIN OBJECTIVE -->
-  <!-- CAROUSEL COMPONENT -->
-  <div class="carousel-container">
-  </div>
+    <!-- Carousel -->
+    <div class="carousel" id="myCarousel">
+        <div class="carousel-inner">
+            <div class="carousel-item">
+                <img src="assets/carousel/computer.jpeg" alt="image">
+            </div>
+            <div class="carousel-item">
+                <img src="assets/carousel/mountains.jpeg" alt="image">
+            </div>
+            <div class="carousel-item">
+                <img src="assets/carousel/trees.jpeg" alt="image">
+            </div>
+            <div class="carousel-item">
+                <img src="assets/carousel/turntable.jpeg" alt="image">
+            </div>
+        </div>
+    </div>
+    <div class="carousel-controls">
+        <button id="carouselLeft">&lt;</button>
+        <button id="carouselRight">&gt;</button>
+        <label for="autoPlay">Auto</label><input type="checkbox" id="autoPlay">
+    </div>
 
-  <!-- CARDS CONTAINER, PLACE ARTICLE CARDS HERE -->
-  <div class="cards-container">
-  </div>
+    <!-- TABS COMPONENT, PLACE TABS HERE-->
+    <div class="tabs">
+        <div class="topics">
+            <span class="title">TRENDING TOPICS:</span>
+        </div>
+    </div>
+
+    <!-- STRETCH GOAL: ONLY ATTEMPT THIS WHEN YOU ARE FINISHED WITH THE MAIN OBJECTIVE -->
+    <!-- CAROUSEL COMPONENT -->
+    <div class="carousel-container">
+    </div>
+
+    <!-- CARDS CONTAINER, PLACE ARTICLE CARDS HERE -->
+    <div class="cards-container">
+    </div>
 
 </body>
 
